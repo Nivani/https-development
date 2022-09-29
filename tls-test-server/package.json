@@ -1,0 +1,15 @@
+{
+  "name": "tls-test-server",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@koa/cors": "^3.4.1",
+    "koa": "^2.13.4"
+  },
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "author": "Nick Van Nieuwenhuyse",
+  "license": "ISC"
+}
