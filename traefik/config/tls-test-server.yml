@@ -1,16 +1,160 @@
-http:
-  routers:
-    to-tls-test-server:
-      rule: "Host(`8080.dev.localhost`)"
-      tls: {}
-      service: tls-test-server
-  services:
-    tls-test-server:
-      loadBalancer:
-        servers:
-          - url: http://gateway.docker.internal:8081
-
 tls:
   certificates:
     - certFile: /etc/traefik/_wildcard.dev.localhost.pem
       keyFile: /etc/traefik/_wildcard.dev.localhost-key.pem
+
+http:
+  routers:
+    to-tls-test-server-8081:
+      rule: "Host(`8081.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8081
+    to-tls-test-server-8082:
+      rule: "Host(`8082.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8082
+    to-tls-test-server-8083:
+      rule: "Host(`8083.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8083
+    to-tls-test-server-8084:
+      rule: "Host(`8084.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8084
+    to-tls-test-server-8085:
+      rule: "Host(`8085.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8085
+    to-tls-test-server-8086:
+      rule: "Host(`8086.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8086
+    to-tls-test-server-8087:
+      rule: "Host(`8087.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8087
+    to-tls-test-server-8088:
+      rule: "Host(`8088.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8088
+    to-tls-test-server-8089:
+      rule: "Host(`8089.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8089
+    to-tls-test-server-8090:
+      rule: "Host(`8090.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8090
+    to-tls-test-server-8091:
+      rule: "Host(`8091.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8091
+    to-tls-test-server-8092:
+      rule: "Host(`8092.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8092
+    to-tls-test-server-8093:
+      rule: "Host(`8093.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8093
+    to-tls-test-server-8094:
+      rule: "Host(`8094.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8094
+    to-tls-test-server-8095:
+      rule: "Host(`8095.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8095
+    to-tls-test-server-8096:
+      rule: "Host(`8096.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8096
+    to-tls-test-server-8097:
+      rule: "Host(`8097.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8097
+    to-tls-test-server-8098:
+      rule: "Host(`8098.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8098
+    to-tls-test-server-8099:
+      rule: "Host(`8099.dev.localhost`)"
+      tls: {}
+      service: tls-test-server-8099
+  services:
+    tls-test-server-8081:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8081
+    tls-test-server-8082:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8082
+    tls-test-server-8083:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8083
+    tls-test-server-8084:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8084
+    tls-test-server-8085:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8085
+    tls-test-server-8086:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8086
+    tls-test-server-8087:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8087
+    tls-test-server-8088:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8088
+    tls-test-server-8089:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8089
+    tls-test-server-8090:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8090
+    tls-test-server-8091:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8091
+    tls-test-server-8092:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8092
+    tls-test-server-8093:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8093
+    tls-test-server-8094:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8094
+    tls-test-server-8095:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8095
+    tls-test-server-8096:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8096
+    tls-test-server-8097:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8097
+    tls-test-server-8098:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8098
+    tls-test-server-8099:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8099
