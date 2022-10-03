@@ -2,10 +2,10 @@ fetch('/user')
 	.then(response => response.json())
 	.then((user) => {
 		console.log('user', user);
+		print(`user: ${JSON.stringify(user)}`);
 	});
 
-const wsUrl = 'wss://8080.dev.localhost/ws/';
-// const wsUrl = 'ws://localhost:8070/ws/';
+const wsUrl = `wss://${window.location.hostname}/ws/`;
 
 const webSocket = new WebSocket(wsUrl);
 webSocket.onopen = function onopen() {
@@ -16,4 +16,11 @@ webSocket.onopen = function onopen() {
 
 webSocket.onmessage = function onmessage(msg) {
 	console.log('onmessage', msg);
+	print(msg.data);
 };
+
+function print(msg) {
+	const div = document.createElement("div");
+	div.innerText = msg;
+	document.body.appendChild(div);
+}
