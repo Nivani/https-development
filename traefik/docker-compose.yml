@@ -4,9 +4,12 @@ services:
     image: traefik:latest
     ports:
       - "80:80"
+      - "443:443"
       - "8080:8080"
     volumes:
       - ./traefik.yml:/etc/traefik/traefik.yml
       - ./config:/etc/traefik/config
+      - ../nginx/_wildcard.dev.localhost.pem:/etc/traefik/_wildcard.dev.localhost.pem
+      - ../nginx/_wildcard.dev.localhost-key.pem:/etc/traefik/_wildcard.dev.localhost-key.pem
     extra_hosts:
       - "gateway.docker.internal:172.24.29.174"

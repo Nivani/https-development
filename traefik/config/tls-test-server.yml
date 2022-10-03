@@ -1,10 +1,16 @@
 http:
   routers:
     to-tls-test-server:
-      rule: "Host(`localhost`)"
+      rule: "Host(`8080.dev.localhost`)"
+      tls: {}
       service: tls-test-server
   services:
     tls-test-server:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8081
+
+tls:
+  certificates:
+    - certFile: /etc/traefik/_wildcard.dev.localhost.pem
+      keyFile: /etc/traefik/_wildcard.dev.localhost-key.pem

@@ -2,8 +2,8 @@ api:
   insecure: true
 
 entryPoints:
-  web:
-    address: ":80"
+  webSecure:
+    address: ":443"
 
 providers:
   file:
