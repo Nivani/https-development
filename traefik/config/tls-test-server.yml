@@ -1,0 +1,10 @@
+http:
+  routers:
+    to-tls-test-server:
+      rule: "Host(`localhost`)"
+      service: tls-test-server
+  services:
+    tls-test-server:
+      loadBalancer:
+        servers:
+          - url: http://gateway.docker.internal:8081

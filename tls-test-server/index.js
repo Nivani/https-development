@@ -4,7 +4,7 @@ const Koa = require('koa');
 
 const { WebSocketServer } = require('ws');
 
-startAPIServer(8080);
+startAPIServer(8081);
 
 function startAPIServer(port) {
 	new Promise((resolve) => {

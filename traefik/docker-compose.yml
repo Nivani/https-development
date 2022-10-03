@@ -1,0 +1,12 @@
+version: '3'
+services:
+  traefik:
+    image: traefik:latest
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      - ./traefik.yml:/etc/traefik/traefik.yml
+      - ./config:/etc/traefik/config
+    extra_hosts:
+      - "gateway.docker.internal:172.24.29.174"

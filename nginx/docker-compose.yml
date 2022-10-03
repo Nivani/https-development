@@ -7,8 +7,6 @@ services:
       - "8070:8070"
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - ./_wildcard.dev.localhost.crt:/etc/nginx/_wildcard.dev.localhost.crt
-      - ./_wildcard.dev.localhost.key:/etc/nginx/_wildcard.dev.localhost.key
       - ./_wildcard.dev.localhost.pem:/etc/nginx/_wildcard.dev.localhost.pem
       - ./_wildcard.dev.localhost-key.pem:/etc/nginx/_wildcard.dev.localhost-key.pem
     extra_hosts:
