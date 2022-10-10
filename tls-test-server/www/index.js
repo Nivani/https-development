@@ -1,23 +1,42 @@
-fetch('/user')
-	.then(response => response.json())
-	.then((user) => {
-		console.log('user', user);
-		print(`user: ${JSON.stringify(user)}`);
+fetchUser();
+testWebSocket();
+testServerSentEvents();
+
+function fetchUser() {
+	fetch('/user')
+		.then(response => response.json())
+		.then((user) => {
+			console.log('user', user);
+			print(`user: ${JSON.stringify(user)}`);
+		});
+}
+
+function testWebSocket() {
+	const wsUrl = `wss://${window.location.hostname}/ws/`;
+
+	const webSocket = new WebSocket(wsUrl);
+
+	webSocket.addEventListener('open', () => {
+		console.log('WS open');
+		setTimeout(() => webSocket.send("WS: test send"), 1500);
 	});
 
-const wsUrl = `wss://${window.location.hostname}/ws/`;
+	webSocket.addEventListener('message', (msg) => {
+		console.log('WS message', msg);
+		print(`WS: ${msg.data}`);
+	});
+}
 
-const webSocket = new WebSocket(wsUrl);
-webSocket.onopen = function onopen() {
-	console.log('onopen');
+function testServerSentEvents() {
+	const eventSource = new EventSource('/countdown-sse');
 
-	setTimeout(() => webSocket.send("test send"), 1500);
-};
+	eventSource.addEventListener('open', () => console.log('SSE: open'));
 
-webSocket.onmessage = function onmessage(msg) {
-	console.log('onmessage', msg);
-	print(msg.data);
-};
+	eventSource.addEventListener('message', (msg) => {
+		console.log('SSE message', msg);
+		print(`SSE: ${msg.data}`);
+	});
+}
 
 function print(msg) {
 	const div = document.createElement("div");

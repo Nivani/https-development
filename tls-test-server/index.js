@@ -4,69 +4,101 @@ const Koa = require('koa');
 
 const { WebSocketServer } = require('ws');
 
-startAPIServer(8093);
+startAPIServer(8081);
 
 function startAPIServer(port) {
-	new Promise((resolve) => {
-		const app = new Koa();
-		app.use(handleHttpGet);
+	const handleHttpRequest = createHandleHttpRequest();
+	const httpServer = http.createServer(handleHttpRequest);
 
-		const server = http.createServer(app.callback());
-
-		const wsServer = createVirtualWsServer();
-		server.on('upgrade', function handleUpgrade(request, socket, head) {
-			wsServer.handleUpgrade(request, socket, head, function wsUpgraded(ws) {
-				wsServer.emit('connection', ws, request);
-			});
+	const webSocketServer = createVirtualWsServer();
+	httpServer.on('upgrade', function handleUpgrade(request, socket, head) {
+		webSocketServer.handleUpgrade(request, socket, head, function wsUpgraded(ws) {
+			webSocketServer.emit('connection', ws, request);
 		});
-
-		server.listen(port);
-
-		console.log(`API Server is running on port ${port}`);
-		resolve();
 	});
+
+	httpServer.listen(port);
+
+	console.log(`API Server is running on port ${port}`);
 }
 
-function createVirtualWsServer() {
-	const wss = new WebSocketServer({ path: '/ws/', noServer: true });
+function createHandleHttpRequest() {
+	const app = new Koa();
+	app.use(handleHttpGet);
+	const handleRequestWithKoa = app.callback();
 
-	wss.on('connection', function connection(ws) {
-		ws.on('message', function message(data) {
-			console.log('received: %s, sending back', data);
-			ws.send(`echo ${data}`);
-		});
-
-		ws.send('connected!');
-
-		let c = 1;
-		let intervalId;
-		intervalId = setInterval(() => {
-			console.log('sending', c);
-			ws.send(`${c++}`);
-			if (c > 7) {
-				clearInterval(intervalId);
-			}
-		}, 1000);
-	});
-
-	return wss;
+	return function handleHttpRequest(request, response) {
+		if (request.method === 'GET' && request.url === '/countdown-sse') {
+			handleServerSentEventsRequest(request, response);
+		} else {
+			handleRequestWithKoa(request, response);
+		}
+	};
 }
 
 function handleHttpGet(ctx) {
 	switch (ctx.request.url) {
 		case '/user':
-			ctx.body = {id: "1234", name: "John Doe"};
+			ctx.body = { id: '1234', name: 'John Doe' };
 			break;
 		case '/index.html':
 		case '/':
-			ctx.response.set("content-type", "text/html");
+			ctx.response.set('content-type', 'text/html');
 			ctx.body = fs.createReadStream('./www/index.html');
 			break;
 		case '/index.js':
-			ctx.response.set("content-type", "text/javascript");
+			ctx.response.set('content-type', 'text/javascript');
 			ctx.body = fs.createReadStream('./www/index.js');
 			break;
 		default:
 			console.warn(`Received request for unmapped URL '${ctx.request.url}'`);
 	}
+}
+
+function handleServerSentEventsRequest(request, response) {
+	response.writeHead(200, {
+		'Content-Type': 'text/event-stream',
+		'Cache-Control': 'no-cache',
+		'Connection': 'keep-alive'
+	})
+
+	countdown(7, 1000, (count) => {
+		console.log('SSE: sending', count);
+		response.write(`data: ${count}\n\n`)
+	}).then(() => response.end());
+}
+
+function createVirtualWsServer() {
+	const webSocketServer = new WebSocketServer({ path: '/ws/', noServer: true });
+
+	webSocketServer.on('connection', function connection(webSocket) {
+		webSocket.on('message', function message(data) {
+			console.log('received: %s, sending back', data);
+			webSocket.send(`echo ${data}`);
+		});
+
+		webSocket.send('connected!');
+
+		countdown(7, 1000, (count) => {
+			console.log('WS sending', count);
+			webSocket.send(`${count}`);
+		}).then(() => webSocket.close());
+	});
+
+	return webSocketServer;
+}
+
+function countdown(max, intervalMs, callback) {
+	return new Promise((resolve) => {
+		let count = 1;
+		let intervalId;
+		intervalId = setInterval(() => {
+			callback(count);
+			count++;
+			if (count > max) {
+				clearInterval(intervalId);
+				resolve();
+			}
+		}, intervalMs);
+	});
 }

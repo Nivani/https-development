@@ -12,4 +12,4 @@ services:
       - ../nginx/_wildcard.dev.localhost.pem:/etc/traefik/_wildcard.dev.localhost.pem
       - ../nginx/_wildcard.dev.localhost-key.pem:/etc/traefik/_wildcard.dev.localhost-key.pem
     extra_hosts:
-      - "gateway.docker.internal:172.24.26.127"
+      - "gateway.docker.internal:172.19.143.173"
