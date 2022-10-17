@@ -9,7 +9,9 @@ services:
     volumes:
       - ./traefik.yml:/etc/traefik/traefik.yml
       - ./config:/etc/traefik/config
-      - ../nginx/_wildcard.dev.localhost.pem:/etc/traefik/_wildcard.dev.localhost.pem
-      - ../nginx/_wildcard.dev.localhost-key.pem:/etc/traefik/_wildcard.dev.localhost-key.pem
-    extra_hosts:
-      - "gateway.docker.internal:172.19.143.173"
+      - ./_wildcard.localhost.development.pem:/etc/traefik/_wildcard.localhost.development.pem
+      - ./_wildcard.localhost.development-key.pem:/etc/traefik/_wildcard.localhost.development-key.pem
+    # extra_hosts is only needed if you're using WSL2 on Windows
+    # to find the ip, open a WSL terminal and run "ip addr show eth0"
+#    extra_hosts:
+#      - "gateway.docker.internal:172.20.8.220"
