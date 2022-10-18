@@ -1,2 +1,2 @@
-_wildcard.localhost.development.pem
-_wildcard.localhost.development-key.pem
+_wildcard.localhost.test.pem
+_wildcard.localhost.test-key.pem

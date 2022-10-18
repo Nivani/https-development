@@ -1,88 +1,88 @@
 tls:
   certificates:
-    - certFile: /etc/traefik/_wildcard.localhost.development.pem
-      keyFile: /etc/traefik/_wildcard.localhost.development-key.pem
+    - certFile: /etc/traefik/_wildcard.localhost.test.pem
+      keyFile: /etc/traefik/_wildcard.localhost.test-key.pem
 
 http:
   routers:
     to-tls-test-server-8080:
-      rule: "Host(`8080.localhost.development`)"
+      rule: "Host(`8080.localhost.test`)"
       tls: {}
       service: tls-test-server-8080
     to-tls-test-server-8081:
-      rule: "Host(`8081.localhost.development`)"
+      rule: "Host(`8081.localhost.test`)"
       tls: {}
       service: tls-test-server-8081
     to-tls-test-server-8082:
-      rule: "Host(`8082.localhost.development`)"
+      rule: "Host(`8082.localhost.test`)"
       tls: {}
       service: tls-test-server-8082
     to-tls-test-server-8083:
-      rule: "Host(`8083.localhost.development`)"
+      rule: "Host(`8083.localhost.test`)"
       tls: {}
       service: tls-test-server-8083
     to-tls-test-server-8084:
-      rule: "Host(`8084.localhost.development`)"
+      rule: "Host(`8084.localhost.test`)"
       tls: {}
       service: tls-test-server-8084
     to-tls-test-server-8085:
-      rule: "Host(`8085.localhost.development`)"
+      rule: "Host(`8085.localhost.test`)"
       tls: {}
       service: tls-test-server-8085
     to-tls-test-server-8086:
-      rule: "Host(`8086.localhost.development`)"
+      rule: "Host(`8086.localhost.test`)"
       tls: {}
       service: tls-test-server-8086
     to-tls-test-server-8087:
-      rule: "Host(`8087.localhost.development`)"
+      rule: "Host(`8087.localhost.test`)"
       tls: {}
       service: tls-test-server-8087
     to-tls-test-server-8088:
-      rule: "Host(`8088.localhost.development`)"
+      rule: "Host(`8088.localhost.test`)"
       tls: {}
       service: tls-test-server-8088
     to-tls-test-server-8089:
-      rule: "Host(`8089.localhost.development`)"
+      rule: "Host(`8089.localhost.test`)"
       tls: {}
       service: tls-test-server-8089
     to-tls-test-server-8090:
-      rule: "Host(`8090.localhost.development`)"
+      rule: "Host(`8090.localhost.test`)"
       tls: {}
       service: tls-test-server-8090
     to-tls-test-server-8091:
-      rule: "Host(`8091.localhost.development`)"
+      rule: "Host(`8091.localhost.test`)"
       tls: {}
       service: tls-test-server-8091
     to-tls-test-server-8092:
-      rule: "Host(`8092.localhost.development`)"
+      rule: "Host(`8092.localhost.test`)"
       tls: {}
       service: tls-test-server-8092
     to-tls-test-server-8093:
-      rule: "Host(`8093.localhost.development`)"
+      rule: "Host(`8093.localhost.test`)"
       tls: {}
       service: tls-test-server-8093
     to-tls-test-server-8094:
-      rule: "Host(`8094.localhost.development`)"
+      rule: "Host(`8094.localhost.test`)"
       tls: {}
       service: tls-test-server-8094
     to-tls-test-server-8095:
-      rule: "Host(`8095.localhost.development`)"
+      rule: "Host(`8095.localhost.test`)"
       tls: {}
       service: tls-test-server-8095
     to-tls-test-server-8096:
-      rule: "Host(`8096.localhost.development`)"
+      rule: "Host(`8096.localhost.test`)"
       tls: {}
       service: tls-test-server-8096
     to-tls-test-server-8097:
-      rule: "Host(`8097.localhost.development`)"
+      rule: "Host(`8097.localhost.test`)"
       tls: {}
       service: tls-test-server-8097
     to-tls-test-server-8098:
-      rule: "Host(`8098.localhost.development`)"
+      rule: "Host(`8098.localhost.test`)"
       tls: {}
       service: tls-test-server-8098
     to-tls-test-server-8099:
-      rule: "Host(`8099.localhost.development`)"
+      rule: "Host(`8099.localhost.test`)"
       tls: {}
       service: tls-test-server-8099
   services:
