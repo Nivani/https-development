@@ -27,9 +27,9 @@ Go to the `traefik` folder
 Run `docker-compose up`
 
 You can now access any development server running on ports between 8080 and 8099 over HTTPS by replacing `http://localhost:<port>` with `https://<port>.localhost.test`.  
-For example, you can open [https://8080.localhost.test](https://8080.localhost.test) in your favorite browser. You should see Traefik's dashboard.
+For example, you can open [https://8099.localhost.test](https://8080.localhost.test) in your favorite browser. You should see Traefik's dashboard.
 
 To run the test application, go to the `tls-test-server` folder  
 Run `npm install` and `node index.js`
 
-Open [https://8081.localhost.test](https://8081.localhost.test) in your favorite browser to see an API call, a websocket over WSS and Server-sent events in action.
+Open [https://8080.localhost.test](https://8080.localhost.test) in your favorite browser to see an API call, a websocket over WSS and Server-sent events in action.

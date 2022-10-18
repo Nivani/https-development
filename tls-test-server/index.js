@@ -4,7 +4,7 @@ const Koa = require('koa');
 
 const { WebSocketServer } = require('ws');
 
-startAPIServer(8081);
+startAPIServer(8080);
 
 function startAPIServer(port) {
 	const handleHttpRequest = createHandleHttpRequest();
