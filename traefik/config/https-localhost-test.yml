@@ -89,80 +89,80 @@ http:
     https-localhost-test-8080:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8080
+          - url: http://host.docker.internal:8080
     https-localhost-test-8081:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8081
+          - url: http://host.docker.internal:8081
     https-localhost-test-8082:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8082
+          - url: http://host.docker.internal:8082
     https-localhost-test-8083:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8083
+          - url: http://host.docker.internal:8083
     https-localhost-test-8084:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8084
+          - url: http://host.docker.internal:8084
     https-localhost-test-8085:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8085
+          - url: http://host.docker.internal:8085
     https-localhost-test-8086:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8086
+          - url: http://host.docker.internal:8086
     https-localhost-test-8087:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8087
+          - url: http://host.docker.internal:8087
     https-localhost-test-8088:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8088
+          - url: http://host.docker.internal:8088
     https-localhost-test-8089:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8089
+          - url: http://host.docker.internal:8089
     https-localhost-test-8090:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8090
+          - url: http://host.docker.internal:8090
     https-localhost-test-8091:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8091
+          - url: http://host.docker.internal:8091
     https-localhost-test-8092:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8092
+          - url: http://host.docker.internal:8092
     https-localhost-test-8093:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8093
+          - url: http://host.docker.internal:8093
     https-localhost-test-8094:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8094
+          - url: http://host.docker.internal:8094
     https-localhost-test-8095:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8095
+          - url: http://host.docker.internal:8095
     https-localhost-test-8096:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8096
+          - url: http://host.docker.internal:8096
     https-localhost-test-8097:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8097
+          - url: http://host.docker.internal:8097
     https-localhost-test-8098:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8098
+          - url: http://host.docker.internal:8098
     https-localhost-test-8099:
       loadBalancer:
         servers:
-          - url: http://gateway.docker.internal:8099
+          - url: http://host.docker.internal:8099

@@ -11,7 +11,7 @@ services:
       - ./config:/etc/traefik/config:ro
       - ./_wildcard.localhost.test.pem:/etc/traefik/_wildcard.localhost.test.pem:ro
       - ./_wildcard.localhost.test-key.pem:/etc/traefik/_wildcard.localhost.test-key.pem:ro
-    # extra_hosts is only needed if you're using WSL2 on Windows
-    # to find the ip, open a WSL terminal and run "ip addr show eth0"
+    # extra_hosts is only needed if you're using Docker without Docker Desktop
+    # https://stackoverflow.com/questions/48546124/what-is-linux-equivalent-of-host-docker-internal
 #    extra_hosts:
-#      - "gateway.docker.internal:172.20.10.112"
+#      - "host.docker.internal:host-gateway"

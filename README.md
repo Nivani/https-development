@@ -21,7 +21,7 @@ You can do this by adding these lines to your hosts file (`/etc/hosts` on unix b
 127.0.0.1   8099.localhost.test
 ```
 
-(If you're running WSL2 on Windows, run `ip addr show eth0` and copy the IPV4 address. In `traefik/docker-compose.yml`, uncomment the `extra_hosts` section and replace the IP address with the one you just copied)
+(If you've installed Docker without Docker Desktop, open `traefik/docker-compose.yml` and uncomment the `extra_hosts` section)
 
 Go to the `traefik` folder  
 Run `docker-compose up`
