@@ -5,164 +5,164 @@ tls:
 
 http:
   routers:
-    to-tls-test-server-8080:
+    to-https-localhost-test-8080:
       rule: "Host(`8080.localhost.test`)"
       tls: {}
-      service: tls-test-server-8080
-    to-tls-test-server-8081:
+      service: https-localhost-test-8080
+    to-https-localhost-test-8081:
       rule: "Host(`8081.localhost.test`)"
       tls: {}
-      service: tls-test-server-8081
-    to-tls-test-server-8082:
+      service: https-localhost-test-8081
+    to-https-localhost-test-8082:
       rule: "Host(`8082.localhost.test`)"
       tls: {}
-      service: tls-test-server-8082
-    to-tls-test-server-8083:
+      service: https-localhost-test-8082
+    to-https-localhost-test-8083:
       rule: "Host(`8083.localhost.test`)"
       tls: {}
-      service: tls-test-server-8083
-    to-tls-test-server-8084:
+      service: https-localhost-test-8083
+    to-https-localhost-test-8084:
       rule: "Host(`8084.localhost.test`)"
       tls: {}
-      service: tls-test-server-8084
-    to-tls-test-server-8085:
+      service: https-localhost-test-8084
+    to-https-localhost-test-8085:
       rule: "Host(`8085.localhost.test`)"
       tls: {}
-      service: tls-test-server-8085
-    to-tls-test-server-8086:
+      service: https-localhost-test-8085
+    to-https-localhost-test-8086:
       rule: "Host(`8086.localhost.test`)"
       tls: {}
-      service: tls-test-server-8086
-    to-tls-test-server-8087:
+      service: https-localhost-test-8086
+    to-https-localhost-test-8087:
       rule: "Host(`8087.localhost.test`)"
       tls: {}
-      service: tls-test-server-8087
-    to-tls-test-server-8088:
+      service: https-localhost-test-8087
+    to-https-localhost-test-8088:
       rule: "Host(`8088.localhost.test`)"
       tls: {}
-      service: tls-test-server-8088
-    to-tls-test-server-8089:
+      service: https-localhost-test-8088
+    to-https-localhost-test-8089:
       rule: "Host(`8089.localhost.test`)"
       tls: {}
-      service: tls-test-server-8089
-    to-tls-test-server-8090:
+      service: https-localhost-test-8089
+    to-https-localhost-test-8090:
       rule: "Host(`8090.localhost.test`)"
       tls: {}
-      service: tls-test-server-8090
-    to-tls-test-server-8091:
+      service: https-localhost-test-8090
+    to-https-localhost-test-8091:
       rule: "Host(`8091.localhost.test`)"
       tls: {}
-      service: tls-test-server-8091
-    to-tls-test-server-8092:
+      service: https-localhost-test-8091
+    to-https-localhost-test-8092:
       rule: "Host(`8092.localhost.test`)"
       tls: {}
-      service: tls-test-server-8092
-    to-tls-test-server-8093:
+      service: https-localhost-test-8092
+    to-https-localhost-test-8093:
       rule: "Host(`8093.localhost.test`)"
       tls: {}
-      service: tls-test-server-8093
-    to-tls-test-server-8094:
+      service: https-localhost-test-8093
+    to-https-localhost-test-8094:
       rule: "Host(`8094.localhost.test`)"
       tls: {}
-      service: tls-test-server-8094
-    to-tls-test-server-8095:
+      service: https-localhost-test-8094
+    to-https-localhost-test-8095:
       rule: "Host(`8095.localhost.test`)"
       tls: {}
-      service: tls-test-server-8095
-    to-tls-test-server-8096:
+      service: https-localhost-test-8095
+    to-https-localhost-test-8096:
       rule: "Host(`8096.localhost.test`)"
       tls: {}
-      service: tls-test-server-8096
-    to-tls-test-server-8097:
+      service: https-localhost-test-8096
+    to-https-localhost-test-8097:
       rule: "Host(`8097.localhost.test`)"
       tls: {}
-      service: tls-test-server-8097
-    to-tls-test-server-8098:
+      service: https-localhost-test-8097
+    to-https-localhost-test-8098:
       rule: "Host(`8098.localhost.test`)"
       tls: {}
-      service: tls-test-server-8098
-    to-tls-test-server-8099:
+      service: https-localhost-test-8098
+    to-https-localhost-test-8099:
       rule: "Host(`8099.localhost.test`)"
       tls: {}
-      service: tls-test-server-8099
+      service: https-localhost-test-8099
   services:
-    tls-test-server-8080:
+    https-localhost-test-8080:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8080
-    tls-test-server-8081:
+    https-localhost-test-8081:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8081
-    tls-test-server-8082:
+    https-localhost-test-8082:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8082
-    tls-test-server-8083:
+    https-localhost-test-8083:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8083
-    tls-test-server-8084:
+    https-localhost-test-8084:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8084
-    tls-test-server-8085:
+    https-localhost-test-8085:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8085
-    tls-test-server-8086:
+    https-localhost-test-8086:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8086
-    tls-test-server-8087:
+    https-localhost-test-8087:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8087
-    tls-test-server-8088:
+    https-localhost-test-8088:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8088
-    tls-test-server-8089:
+    https-localhost-test-8089:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8089
-    tls-test-server-8090:
+    https-localhost-test-8090:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8090
-    tls-test-server-8091:
+    https-localhost-test-8091:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8091
-    tls-test-server-8092:
+    https-localhost-test-8092:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8092
-    tls-test-server-8093:
+    https-localhost-test-8093:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8093
-    tls-test-server-8094:
+    https-localhost-test-8094:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8094
-    tls-test-server-8095:
+    https-localhost-test-8095:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8095
-    tls-test-server-8096:
+    https-localhost-test-8096:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8096
-    tls-test-server-8097:
+    https-localhost-test-8097:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8097
-    tls-test-server-8098:
+    https-localhost-test-8098:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8098
-    tls-test-server-8099:
+    https-localhost-test-8099:
       loadBalancer:
         servers:
           - url: http://gateway.docker.internal:8099
