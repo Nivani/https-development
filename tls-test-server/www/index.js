@@ -7,7 +7,7 @@ function fetchUser() {
 		.then(response => response.json())
 		.then((user) => {
 			console.log('user', user);
-			print(`user: ${JSON.stringify(user)}`);
+			print(`GET request: ${JSON.stringify(user)}`);
 		});
 }
 
@@ -17,29 +17,32 @@ function testWebSocket() {
 	const webSocket = new WebSocket(wsUrl);
 
 	webSocket.addEventListener('open', () => {
-		console.log('WS open');
-		setTimeout(() => webSocket.send("WS: test send"), 1500);
+		console.log('WebSocket open');
+		setTimeout(() => webSocket.send("WebSocket: test send"), 1500);
 	});
 
 	webSocket.addEventListener('message', (msg) => {
-		console.log('WS message', msg);
-		print(`WS: ${msg.data}`);
+		console.log('WebSocket message', msg);
+		print(`WebSocket: ${msg.data}`);
 	});
 }
 
 function testServerSentEvents() {
 	const eventSource = new EventSource('/countdown-sse');
 
-	eventSource.addEventListener('open', () => console.log('SSE: open'));
+	eventSource.addEventListener('open', () => {
+		console.log('Server-sent events: open');
+		print('Server-sent events: open');
+	});
 
 	eventSource.addEventListener('message', (msg) => {
-		console.log('SSE message', msg);
-		print(`SSE: ${msg.data}`);
+		console.log('Server-sent event', msg);
+		print(`Server-sent event: ${msg.data}`);
 	});
 }
 
 function print(msg) {
-	const div = document.createElement("div");
+	const div = document.createElement('div');
 	div.innerText = msg;
-	document.body.appendChild(div);
+	document.getElementById('container').appendChild(div);
 }

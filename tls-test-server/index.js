@@ -74,7 +74,7 @@ function createVirtualWsServer() {
 	webSocketServer.on('connection', function connection(webSocket) {
 		webSocket.on('message', function message(data) {
 			console.log('received: %s, sending back', data);
-			webSocket.send(`echo ${data}`);
+			webSocket.send(`echo "${data}"`);
 		});
 
 		webSocket.send('connected!');
