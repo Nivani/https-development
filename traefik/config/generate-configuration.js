@@ -2,7 +2,7 @@
 // the "routers" and "services" sections in traefik/config/tls-test-server.yml
 
 const ports = {
-	from: 8080,
+	from: 8050,
 	to: 8099,
 };
 
