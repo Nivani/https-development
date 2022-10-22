@@ -1,7 +1,7 @@
 This repository demonstrates how you can use HTTPS in development with any server, without changing any code.  
-We can do this by running a reverse proxy that will handle HTTPS for us. I tried Traefik and NGINX. Traefik was easier to configure.
+We can do this by running a reverse proxy that will handle HTTPS for us. After trying Traefik and NGINX, Traefik was easier to configure.
 
-The `tls-test-server` is a test application that demonstrates the use of HTTPS, websockets (WSS) and server-sent events.
+The `test-app` is a test application that demonstrates the use of HTTPS, websockets (WSS) and server-sent events.
 
 # Getting started
 
@@ -29,7 +29,7 @@ Run `docker-compose up`
 You can now access any development server running on ports between 8080 and 8099 over HTTPS by replacing `http://localhost:<port>` with `https://<port>.localhost.test`.  
 For example, you can open [https://8099.localhost.test](https://8080.localhost.test) in your favorite browser to see Traefik's dashboard.
 
-To run the test application, go to the `tls-test-server` folder  
+To run the test application, go to the `test-app` folder  
 Run `npm install` and `npm start`
 
 Open [https://8080.localhost.test](https://8080.localhost.test) in your favorite browser to see an API call, a websocket over WSS and Server-sent events in action.

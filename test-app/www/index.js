@@ -17,8 +17,9 @@ function testWebSocket() {
 	const webSocket = new WebSocket(wsUrl);
 
 	webSocket.addEventListener('open', () => {
-		console.log('WebSocket open');
-		setTimeout(() => webSocket.send("WebSocket: test send"), 1500);
+		console.log('WebSocket: open');
+		print('WebSocket: open');
+		setTimeout(() => webSocket.send("test echo"), 1500);
 	});
 
 	webSocket.addEventListener('message', (msg) => {

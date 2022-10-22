@@ -1,0 +1,1 @@
+Run `node generate-configuration.js > https-localhost-test.yml` to regenerate the configuration.

@@ -4,7 +4,7 @@ const Koa = require('koa');
 
 const { WebSocketServer } = require('ws');
 
-startAPIServer(8080);
+startAPIServer(8060);
 
 function startAPIServer(port) {
 	const handleHttpRequest = createHandleHttpRequest();
@@ -77,7 +77,7 @@ function createVirtualWsServer() {
 			webSocket.send(`echo "${data}"`);
 		});
 
-		webSocket.send('connected!');
+		webSocket.send('Message from your server: thanks for connecting! Starting countdown.');
 
 		countdown(7, 1000, (count) => {
 			console.log('WS sending', count);
@@ -90,12 +90,12 @@ function createVirtualWsServer() {
 
 function countdown(max, intervalMs, callback) {
 	return new Promise((resolve) => {
-		let count = 1;
+		let count = max;
 		let intervalId;
 		intervalId = setInterval(() => {
 			callback(count);
-			count++;
-			if (count > max) {
+			count--;
+			if (count <= 0) {
 				clearInterval(intervalId);
 				resolve();
 			}
