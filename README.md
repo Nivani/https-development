@@ -1,4 +1,6 @@
-This repository demonstrates how you can use HTTPS in development with any server, without changing any code.  
+This repository belongs with the article ["Automatic HTTPS for all your development servers" over at nvnh.io](https://nvnh.io/index.php/2022/10/24/automatic-https-for-all-your-development-servers/).
+
+It demonstrates how you can use HTTPS in development with any server, without changing the code.  
 We can do this by running a reverse proxy that will handle HTTPS for us. After trying Traefik and NGINX, Traefik was easier to configure.
 
 The `test-app` is a test application that demonstrates the use of HTTPS, websockets (WSS) and server-sent events.
